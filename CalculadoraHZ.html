@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculadora Do Hero Zero</title>
+    <link rel="icon" type="image/x-icon" href="https://www5.minijuegosgratis.com/v3/games/thumbnails/22171_1.jpg">
+	<style>
+		body {
+
+			margin: 0;
+			box-sizing: border-box;
+		}
+
+		.header {
+			background-color: #D76411;
+			color: #ffffff;
+			font-size: 40px;
+			text-align: center;
+			padding: 20px;
+            
+		}
+
+		.calculator {
+			border: 1px solid #e2e2e2;
+			box-shadow: 0px 2px 5px rgba(230, 4, 4, 0.1);
+			border-radius: 5px;
+			padding: 20px;
+			margin: 50px auto 150px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.calculator label {
+			font-size: 18px;
+			font-weight: bold;
+			color: #ffffff;
+			margin-bottom: 10px;
+		}
+
+		.calculator input {
+			padding: 10px;
+			font-size: 16px;
+			border: 1px solid #fafafa;
+			border-radius: 5px;
+			width: 100%;
+			margin-bottom: 20px;
+		}
+
+		.calculator button {
+			background-color: #ffffff;
+			color: #ff6a00;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			font-size: 16px;
+			cursor: pointer;
+			transition: background-color 0.2s ease-in-out;
+            margin-bottom: 10px;
+		}
+
+		.calculator button:hover {
+			background-color: #f8f8f8;
+		}
+
+		.result {
+			margin-top: 20px;
+			font-size: 24px;
+			font-weight: bold;
+			text-align: center;
+			color: #333333;
+		}
+
+        /* estilo do card */
+        .card {
+            background-color: #f46601;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            margin-left: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .line {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #fbfbfb;
+        }
+
+        .line span:first-child {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .line span:last-child {
+            font-weight: normal;
+        }
+
+        /* estilo do fundo animado */
+        body {
+            background-color: #ff6a00;
+            animation: changeColor 5s infinite alternate;
+        }
+
+        @keyframes changeColor {
+            0% {
+                background-color: #6f3308;
+            }
+            50% {
+                background-color: #ff6a00;
+            }
+            100% {
+                background-color: #ff8c00;
+            }
+            }
+		
+	</style>
+</head>
+<body>
+	<header class="header">
+		Calculadora Do Hero Zero
+	</header>
+
+	<section>
+		<div class="calculator">
+			<label>Força</label>
+			<input id="forca" type="number">
+
+			<label>Vigor</label>
+			<input id="vigor" type="number">
+
+			<label>Cérebro</label>
+			<input id="cerebro" type="number">
+
+			<label>Intuição</label>
+			<input id="intuicao" type="number">
+
+			<label>Nível</label>
+			<input id="nivel" type="number">
+
+			<button onclick="calcularMedia()">Calcular</button>
+			<div class="result" id="resultado"></div>
+		</div>
+        <div class="card">
+            <div class="line"><span>Se a sua média for abaixo de 10,  vá para Krasnodar!</span> <span id="forca_resultado"></span></div>
+            <div class="line"><span>Se a sua média for abaixo de 30,  vá para Gear!</span> <span id="vigor_resultado"></span></div>
+            <div class="line"><span>Se a sua média for entre 50 a 60, você está no caminho certo!</span> <span id="cerebro_resultado"></span></div>
+            <div class="line"><span>Se a sua média for entre 61 a 70, você está bom!</span> <span id="intuicao_resultado"></span></div>
+            <div class="line"><span>Se a sua média for acima de 85,   você está forte!</span> <span id="nivel_resultado"></span></div>
+            <div class="line"><span>Se a sua média for acima de 100,  parabéns, você ficou forte o suficiente para jogar na Velha Guarda!</span> <span id="media_resultado"></span></div>
+          </div>
+         
+       
+	</section>
+
+	<script>
+		function calcularMedia() {
+			let forca = parseInt(document.getElementById('forca').value);
+			let vigor = parseInt(document.getElementById('vigor').value);
+			let cerebro = parseInt(document.getElementById('cerebro').value);
+			let intuicao = parseInt(document.getElementById('intuicao').value);
+			let nivel = parseInt(document.getElementById('nivel').value);
+
+			let resultado = ((forca + vigor + cerebro + intuicao) / nivel).toFixed(2);
+			document.getElementById('resultado').innerHTML = `Sua média é: ${resultado}`;
+		}
+	</script>
+</body>
+</html>
