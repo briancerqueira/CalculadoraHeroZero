@@ -11,7 +11,7 @@
 		}
 
 		.header {
-			background-color: #D76411;
+			background-color: #f46601;
 			color: #ffffff;
 			font-size: 40px;
 			text-align: center;
@@ -20,9 +20,9 @@
 		}
 
 		.calculator {
-			border: 1px solid #e2e2e2;
-			box-shadow: 0px 2px 5px rgba(230, 4, 4, 0.1);
-			border-radius: 5px;
+			
+			box-shadow: #f46601;
+			border-radius: 50px;
 			padding: 20px;
 			margin: 50px auto 150px;
 			display: flex;
@@ -31,43 +31,51 @@
 		}
 
 		.calculator label {
-			font-size: 18px;
-			font-weight: bold;
-			color: #ffffff;
-			margin-bottom: 10px;
+           
+    text-align: left;
+    margin-right: auto;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 10px;
+
 		}
 
 		.calculator input {
+            text-align: left;
+            margin-right: auto;
+            margin-left: 0;
 			padding: 10px;
 			font-size: 16px;
 			border: 1px solid #fafafa;
-			border-radius: 5px;
-			width: 100%;
+			border-radius: 16px;
+			width: 40%;
 			margin-bottom: 20px;
+
 		}
 
 		.calculator button {
-			background-color: #ffffff;
-			color: #ff6a00;
-			padding: 10px 20px;
-			border: none;
-			border-radius: 5px;
-			font-size: 16px;
-			cursor: pointer;
-			transition: background-color 0.2s ease-in-out;
-            margin-bottom: 10px;
-		}
-
+    background-color: #ffffff;
+    color: #ff6a00;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 0px;
+    margin-right: 65%; /* Adicionado para alinhar à esquerda */
+}
 		.calculator button:hover {
 			background-color: #f8f8f8;
 		}
 
 		.result {
-			margin-top: 20px;
+			margin-top: 40px;
+            margin-left: 60%;
 			font-size: 24px;
 			font-weight: bold;
 			text-align: center;
-			color: #333333;
+			color: #ffffff;
 		}
 
         /* estilo do card */
@@ -79,8 +87,11 @@
             margin-left: 50px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content:right; 
             align-items: center;
+            width: 30%;
+            margin-left: 60%;
+            margin-top: -33%;
         }
 
         .line {
@@ -110,13 +121,13 @@
 
         @keyframes changeColor {
             0% {
-                background-color: #6f3308;
+                background-color: #f06705de;
             }
             50% {
-                background-color: #ff6a00;
+                background-color: #f57c25d8;
             }
             100% {
-                background-color: #ff8c00;
+                background-color: #f1921de7;
             }
             }
 		
@@ -128,6 +139,7 @@
 	</header>
 
 	<section>
+        
 		<div class="calculator">
 			<label>Força</label>
 			<input id="forca" type="number">
@@ -145,16 +157,18 @@
 			<input id="nivel" type="number">
 
 			<button onclick="calcularMedia()">Calcular</button>
+            <div class="card">
+                <div class="line"><span>Se a sua média for abaixo de 10,  vá para Krasnodar!</span> <span id="forca_resultado"></span></div>
+                <div class="line"><span>Se a sua média for abaixo de 30,  vá para Gear!</span> <span id="vigor_resultado"></span></div>
+                <div class="line"><span>Se a sua média for entre 50 a 60, você está no caminho certo!</span> <span id="cerebro_resultado"></span></div>
+                <div class="line"><span>Se a sua média for entre 61 a 70, você está bom!</span> <span id="intuicao_resultado"></span></div>
+                <div class="line"><span>Se a sua média for acima de 85,   você está forte!</span> <span id="nivel_resultado"></span></div>
+                <div class="line"><span>Se a sua média for acima de 100,  parabéns, você ficou forte o suficiente para jogar na Velha Guarda!</span> <span id="media_resultado"></span></div>
+              </div>
 			<div class="result" id="resultado"></div>
+            
 		</div>
-        <div class="card">
-            <div class="line"><span>Se a sua média for abaixo de 50,  vá para Krasnodar!</span> <span id="forca_resultado"></span></div>
-            <div class="line"><span>Se a sua média for abaixo de 70,  vá para Gear!</span> <span id="vigor_resultado"></span></div>
-            <div class="line"><span>Se a sua média for entre 85 a 95, você está no caminho certo!</span> <span id="cerebro_resultado"></span></div>
-            <div class="line"><span>Se a sua média for entre 96 a 115, você está bom!</span> <span id="intuicao_resultado"></span></div>
-            <div class="line"><span>Se a sua média for acima de 135,   você está forte!</span> <span id="nivel_resultado"></span></div>
-            <div class="line"><span>Se a sua média for acima de 150,  parabéns, você ficou forte o suficiente para jogar na Velha Guarda!</span> <span id="media_resultado"></span></div>
-          </div>
+       
          
        
 	</section>
